@@ -1,0 +1,9 @@
+git create mynewrepo
+git init  //only first time
+git add .                                        // every time new changes
+git commit -m "Message hehe"                    // every time new changes
+git remote add origin (remote repository URL)  // only first time creating connection
+git remote -v                                 // to verify only first time
+git push origin master                       //// every time new changes
+
+remote repository like :: https://github.com/divyaman777/helloWorld.git
