@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product..!!</title>
+</head>
+<body>
+	<body>
+	<form onsubmit='product();'>
+		<input id="num1" placeholder="NUM 1" required="true"><br><br>
+		<input id="num2" placeholder="NUM 2" required="true"><br><br>
+		<input type="submit" value="Product">
+	</form>
+	<div id='ans'></div>
+	<script type="text/javascript">
+		function product(){
+			var num1 = parseInt(document.getElementById('num1').value) ;
+			var num2 = parseInt(document.getElementById('num2').value) ;
+			var ans = num1 * num2 ;
+			document.getElementById('ans').innerHTML = "Product of " + num1 + " and " + num2 + " is::" + ans;
+			
+			alert("Product of " + num1 + " and " + num2 + " is::" + ans ) ;
+
+		}
+	</script>
+</body>
+</html>
