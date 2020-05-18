@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OOPS</title>
+</head>
+<body>
+<h1> OOPS in JavaScript...!! </h1>
+<p>
+	Created a class Car and its data number and methods add and show....
+	COOL..!!
+</p>
+<script type="text/javascript">
+	function Car(name) {
+		this.name = name ;
+		this.no = 0 ;
+		this.add = function () {
+			this.no = this.no + 1 ;
+			console.log("Current Value :: " + this.no) ;
+		}
+		this.show = function () {
+			console.log("Hello the name is:: "+this.name) ;
+		}
+	}
+	x = new Car("BMW") ;
+	x.add();
+	x.add();
+	x.show();
+</script>
+</body>
+</html>
