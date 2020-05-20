@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery..Form</title>
+</head>
+<body>
+<input type="text" id="square" placeholder="SQUARE" required="true"><br><br>
+<input type="button" id="sq" value="Square"><br><br>
+<div id="sqans"></div><br>
+<input type="text" id="cube" placeholder="CUBE" required="true"><br><br>
+<input type="button" id="cu" value="Cube"><br><br>
+<div id="cuans"></div><br>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#sq').click(function() {
+			var x = parseInt($('#square').val());
+			var f = x * x ;
+			$('#sqans').val(f);
+		});
+		$('#cu').click(function() {
+			var x = parseInt($('#cube').val());
+			var c = x*x*x;
+			$('#cuans').val(c);
+		});
+	});
+</script>
+</body>
+</html>

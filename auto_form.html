@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<title>Auto Form</title>
+</head>
+<body>
+<form id="target">
+	<input type="text" name="one" value="Enter..." style="vertical-align: middle;"/>
+	<img id="spinner" src="3.gif" height="22" style="vertical-align: middle; display: none;">
+</form>
+<div id="result"></div>
+<script type="text/javascript">
+	$('#target').change(function(event) {
+		event.preventDefault();
+		$('#spinner').show() ;
+		var form = $('#target');
+		var txt = form.find("input[name='one']").val();
+		window.console && console.log("Sending..!!") ;
+	return false ;
+	}) ;
+
+</script>
+</body>
+</html>
