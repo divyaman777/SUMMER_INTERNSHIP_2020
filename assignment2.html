@@ -15,18 +15,18 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
 		$('#sq').click(function() {
 			var x = parseInt($('#square').val());
 			var f = x * x ;
-			$('#sqans').val(f);
+			$('#sqans').empty().append("Square of "+ x +" is ::: "+ f);
 		});
 		$('#cu').click(function() {
 			var x = parseInt($('#cube').val());
 			var c = x*x*x;
-			$('#cuans').val(c);
+			$('#cuans').empty().append("Cube of "+ x +" is ::: "+ c);
 		});
 	});
 </script>

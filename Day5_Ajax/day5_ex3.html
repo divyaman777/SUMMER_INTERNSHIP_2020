@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find..!!</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+Roll Number <input type="text" id="rollno" name=""><br><br>
+<input type="button" id="find" name="" value="Find Student"><br><br><br>
+Name <input type="text" id="name" name=""><br><br>
+Course <input type="text" id="course" name="">
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#find').click(function() {
+			var rollno = $('#rollno').val();
+			$.post("day5_ex3.php",{'rollno': rollno},function(r,s) {
+				window.console && console.log(s) ;
+				var ans = r.split(",") ;
+				$('#name').val(ans[0]) ;
+				$('#course').val(ans[1]);
+			});
+		});	
+	});
+</script>
+</body>
+</html>

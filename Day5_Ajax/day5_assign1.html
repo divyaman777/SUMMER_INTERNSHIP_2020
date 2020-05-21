@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+Roll Number <input type="text" id="rollno" name=""><br><br>
+Name <input type="text" id="name" name=""><br><br>
+Course <input type="text" id="course" name=""><br><br>
+<input type="button" id="save" value="Save" name=""><br><br>
+<div id="msg"></div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#save').click(function(event) {
+			window.console && console.log("Hello") ;
+			var rollno = $('#rollno').val();
+			var name = $('#name').val();
+			var course = $('#course').val();
+			$.post('day5assign1.php', { 'rollno': rollno, 'name': name, 'course': course }, function(r, s) {
+				if (r == "done") {
+					$("#msg").html("Data Saved..!!") ;
+				}
+				else{
+					$("#msg").html("Error..!!") ;
+				}
+			});
+		});
+	});
+</script>
+</body>
+</html>
