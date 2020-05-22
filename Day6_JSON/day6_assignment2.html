@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Book</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+Book Id :: <input type="number" id="bookno" required="true"><br><br>
+<input type="button" id="find" value=" Find Book ">
+<img src="3.gif" id="spinner" height="25" style="display: none"/><br><br>
+<div id="msg"></div><br><br>
+
+<div id="title"></div><br>
+<div id="author"></div><br>
+<div id="price"></div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#find').click(function(event) {
+			$('#spinner').show() ;
+			var bookno = parseInt($('#bookno').val()) ;
+			$.post('day5_assignment2.php', {'bookno': bookno}, function(r, s) {
+				$('#spinner').hide() ;
+				var ans = JSON.parse(r) ;
+				/* var ans = r.split(',') */ ;
+				if(ans['sta'] == 'done') {
+					$('#msg').html("BOOK FOUND...!!") ;
+					$('#msg').css('color', 'green');
+					$('#title').html("Title :: " + ans["title"]) ;
+					$('#title').css('color', 'green');
+					$('#author').html("Author :: " + ans["author"]) ;
+					$('#author').css('color', 'green');
+					$('#price').html("Price :: " + ans["price"]) ;
+					$('#price').css('color', 'green');
+				}
+				else{
+					$('#msg').html("BOOK NOT FOUND...!!") ;
+					$('#msg').css('color', 'red');
+				}
+
+			});
+		});
+	});
+</script>
+</body>
+</html>

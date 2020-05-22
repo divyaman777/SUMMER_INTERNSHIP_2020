@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Save Book</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+Book Number <input type="number" id="bookno" name="" required="true"><br><br>
+Title <input type="text" id="title" name="" required="true"><br><br>
+Author <input type="text" id="author" name="" required="true"><br><br>
+Price <input type="text" id="price" name="" required="true"><br><br>
+<input type="button" id="save" name="" value="SAVE BOOK">
+<img src="3.gif" id="spinner" height="22" style="display: none"/><br><br>
+<div id="msg"></div>
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#save').click(function(event) {
+			$('#spinner').show() ;
+			var bookid = parseInt($('#bookno').val()) ;
+			var title = $('#title').val() ;
+			var author = $('#author').val() ;
+			var price  = parseFloat($('#price').val()) ;
+			var data = {'bookid': bookid, 'title': title, 'author': author, 'price': price} ;
+			var sdata = JSON.stringify(data);
+			$.post('day5_assignment1.php', { "data":sdata }, function(r, s) {
+				$('#spinner').hide() ;
+				if(r == "done") {
+					$('#msg').html("Book Added to Database..!!") ;
+					$('#msg').css('color', 'green');
+				}
+				else {
+					$('#msg').html("Error..!!") ;
+					$('#msg').css('color', 'red');	
+				}
+			});
+		});
+	});
+</script>
+</body>
+</html>

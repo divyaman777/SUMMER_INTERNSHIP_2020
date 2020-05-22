@@ -1,0 +1,9 @@
+CMD to run lampp server
+sudo /opt/lampp/lampp start
+sudo /opt/lampp/lampp stop
+
+
+GUI MANAGER ::-
+
+cd /opt/lampp
+sudo ./manager-linux.run

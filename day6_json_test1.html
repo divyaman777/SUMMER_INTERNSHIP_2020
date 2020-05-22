@@ -1,0 +1,38 @@
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<div id="rollno"></div>
+<div id="name"></div>
+<div id="course"></div>
+<div id="data"></div>
+
+<script>
+    var s = {"students" : [
+        {"rollno" : "2018bcs1011",
+        "name" : "Divyaman Tyagi",
+        "course" : "CSE"},
+        {"rollno" : "2018bcs1100",
+        "name" : "Anurag Lodhi",
+        "course" : "CSE"},
+        {"rollno" : "2018bcs1049",
+        "name" : "Harsh Yadav",
+        "course" : "CSE"}]
+    } ;
+    /*
+    document.getElementById("rollno").innerHTML = s.rollno ;
+    document.getElementById("name").innerHTML = s.name ;
+    document.getElementById("course").innerHTML = s.course ;
+    var cdata = JSON.stringify(s) ;
+    document.getElementById("data").innerHTML = cdata ; 
+    alert(s.students.length) ;
+    for(i=0 ; i< s.students.length;i++){
+        alert("Name :: "+s.students[i].name+"  ");
+    }
+    */
+
+    $(document).ready(function() {
+        $.post("http://dataritz.com/sampledata/students.json",{},function(r,s){
+                window.console && console.log(s) ;
+        }) ;
+    }) ;
+
+</script>
